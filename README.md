@@ -1,2 +1,4 @@
 # adventofcode
-http://adventofcode.com/
+
+My solutions to [Advent of Code](http://adventofcode.com/)
+

@@ -5,13 +5,15 @@
         rights (count (re-seq #"\)" input))]
         (- lefts rights)))
 
-
-(loop [data input]
-       i 0
-       floor 0]
-  (when (< 0 floor)
-    (println i)
-    (recur (rest input)
-      (if (= ))
-
-      ))))
+(defn day-one-part-two []
+  (loop [elevator input
+         i 0
+         floor 0]
+    (if (< floor 0) 
+      i
+      (recur 
+        (rest elevator)
+        (inc i)
+        (if (= "(" (str (first elevator)))
+          (inc floor)
+          (dec floor))))))
