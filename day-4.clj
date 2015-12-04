@@ -7,17 +7,17 @@
                    .reset
                    (.update (.getBytes message)))))))
 
-(defn leading-zero? [n s]
+(defn leading-zeros? [n s]
   (if (every? #(= \0 %) (take n s)) s))
 
-(defn day-four-part-one []
+(defn find-smallest [min-zeros]
   (loop [i 0]
-    (if (leading-zero? 5 (md5-hash (str secret-key i)))
+    (if (leading-zeros? min-zeros (md5-hash (str secret-key i)))
       i
-      (recur (inc i)))))
+      (recur (inc i))))))
+
+(defn day-four-part-one []
+  (find-smallest 5))
 
 (defn day-four-part-two []
-  (loop [i 0]
-    (if (leading-zero? 6 (md5-hash (str secret-key i)))
-      i
-      (recur (inc i)))))
+  (find-smallest 6))
