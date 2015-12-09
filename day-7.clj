@@ -34,12 +34,12 @@
           v
           (build-circuit env value))))))
 
-(defn day-6-part-one []
+(defn day-7-part-one []
   (let [data (parse-input input)
         signal (build-circuit data "a")]
     (overflow signal)))
 
-(defn day-6-part-two []
+(defn day-7-part-two []
   (let [data (parse-input input)
         part-one (str (day-6-part-one))
         new-circuit (assoc data "b" {:value part-one})
