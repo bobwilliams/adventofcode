@@ -29,4 +29,4 @@
 
 (defn day-8-part-two []
   (let [mem-sum (reduce + (map #(mem-count % encode-string 4) input))]
-    (- mem-sum char-sum))
+    (- mem-sum char-sum)))
