@@ -19,8 +19,7 @@
 
 (defn next-pwd [pwd]
   (apply str 
-    (cond 
-      ; (empty? pwd) ""
+    (cond
       (= (last pwd) \z) (concat (next-pwd (drop-last pwd)) (list \a))
       :else (concat (drop-last pwd) (list (next-letter (last pwd)))))))
 
